@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formación y Capacitación de México - Capacitación Hotelera Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fafafa;
+        }
+
+        .header {
+            background: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #16a34a;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #16a34a;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #16a34a;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        .main {
+            margin-top: 80px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #2563eb 100%);
+            color: white;
+            text-align: center;
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            font-size: 15rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-cta {
+            background: #16a34a;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            background: #22c55e;
+        }
+
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+        }
+
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: #f3f4f6;
+            color: #374151;
+            border: 2px solid transparent;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-btn.active,
+        .category-btn:hover {
+            background: #16a34a;
+            color: white;
+            border-color: #16a34a;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .course-card.hidden {
+            display: none;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-content {
+            padding: 1.5rem;
+        }
+
+        .course-badge {
+            display: inline-block;
+            background: #f3f4f6;
+            color: #374151;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .course-badge.administrativo {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .course-badge.operativo {
+            background: #f0fdf4;
+            color: #16a34a;
+        }
+
+        .course-badge.transversal {
+            background: #f0f9ff;
+            color: #2563eb;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+            line-height: 1.4;
+        }
+
+        .course-duration {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .course-description {
+            color: #4b5563;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .course-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-tag {
+            background: #f3f4f6;
+            color: #374151;
+            padding: 0.25rem 0.5rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+        }
+
+        .course-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            border: none;
+            padding: 0.75rem;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .course-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3);
+        }
+
+        .community {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: white;
+            border-radius: 30px;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .community-content {
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .community::before {
+            content: '';
+            position: absolute;
+            font-size: 12rem;
+            opacity: 0.1;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+        }
+
+        .community h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .community p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .community-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+
+        .certification-section {
+            background: #f8fafc;
+            padding: 5rem 0;
+        }
+
+        .certification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cert-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .cert-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .cert-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .cert-item p {
+            color: #6b7280;
+            line-height: 1.6;
+        }
+
+        .contact {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #e2e8f0;
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 1rem;
+            color: #16a34a;
+        }
+
+        .contact-form {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #374151;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #16a34a;
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: #374151;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #16a34a;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .courses-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .community-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .category-nav {
+                gap: 0.5rem;
+            }
+
+            .category-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+
+            .certification-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #333;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">Formación y Capacitación de México</a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#instructores">Instructores</a></li>
+                <li><a href="#comunidad">Comunidad</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="cta-button">Empezar Gratis</button>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section id="inicio" class="hero">
+            <div class="hero-content">
+                <h1>Desarrollando Grandes Personas con Grandes Resultados</h1>
+                <p>Capacitación hotelera profesional diseñada para impulsar tu crecimiento. Cursos especializados para personal administrativo, operativo y directivo del sector hotelero.</p>
+                <button class="hero-cta">Explorar Cursos</button>
+            </div>
+        </section>
+
+        <section id="cursos" class="section">
+            <h2 class="section-title">Nuestros Cursos de Capacitación</h2>
+            
+            <div class="category-nav">
+                <button class="category-btn active" data-category="todos">Todos los Cursos</button>
+                <button class="category-btn" data-category="administrativo">Administrativo</button>
+                <button class="category-btn" data-category="operativo">Operativo</button>
+                <button class="category-btn" data-category="transversal">Transversal</button>
+            </div>
+
+            <div class="courses-grid" id="coursesGrid">
+                <div class="course-card" data-category="administrativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/IbmAznA.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge administrativo">Administrativo</span>
+                        <h3 class="course-title">Liderazgo y Gestión de Equipos en Hospitalidad</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla habilidades relacionadas con trabajo en equipo y colaboración, con énfasis en su aplicación dentro del entorno hotelero.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Dinámicas de grupo</span>
+                            <span class="feature-tag">Comunicación efectiva</span>
+                            <span class="feature-tag">Resolución colaborativa</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="operativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/ZloXg0J.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge operativo">Operativo</span>
+                        <h3 class="course-title">Sostenibilidad y Medio Ambiente</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla conciencia ambiental y aprende prácticas sostenibles aplicables en las operaciones hoteleras.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Prácticas sostenibles</span>
+                            <span class="feature-tag">Ahorro energético</span>
+                            <span class="feature-tag">Gestión de residuos</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/1ROT9pC.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Construcción de Equipos Efectivos (Team Building)</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Fortalece la cohesión del equipo y mejora el desempeño organizacional a través de actividades de team building.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Talleres vivenciales</span>
+                            <span class="feature-tag">Dinámicas grupales</span>
+                            <span class="feature-tag">Ejercicios prácticos</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/qi394Le.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Comunicación Asertiva dentro de los Equipos</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Mejora la comunicación interna y desarrolla habilidades de comunicación asertiva para un mejor ambiente laboral.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Técnicas de comunicación</span>
+                            <span class="feature-tag">Feedback efectivo</span>
+                            <span class="feature-tag">Resolución de conflictos</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/76B8PwO.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Gestión de Conflictos en Entornos Colaborativos</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Aprende técnicas avanzadas para identificar, gestionar y resolver conflictos de manera constructiva.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Mediación</span>
+                            <span class="feature-tag">Negociación</span>
+                            <span class="feature-tag">Resolución win-win</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/hu3H5Uz.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Toma de Decisiones en Equipo</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Desarrolla habilidades para la toma de decisiones colaborativa y efectiva en entornos de equipo.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Metodologías de decisión</span>
+                            <span class="feature-tag">Análisis de alternativas</span>
+                            <span class="feature-tag">Consenso grupal</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/E96lqNS.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Coordinación y Confianza entre Áreas</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Fortalece la coordinación y confianza entre diferentes áreas y departamentos de tu organización hotelera.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Trabajo interdepartamental</span>
+                            <span class="feature-tag">Construcción de confianza</span>
+                            <span class="feature-tag">Coordinación efectiva</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/biObsQy.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Trabajo Intergeneracional: Colaborando con Distintas Edades</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Aprende a gestionar equipos multigeneracionales y aprovechar las fortalezas de cada generación.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Diversidad generacional</span>
+                            <span class="feature-tag">Comunicación intergeneracional</span>
+                            <span class="feature-tag">Sinergia de equipos</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/gMN4Pf0.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Gestión del Cambio y Adaptabilidad Grupal</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Desarrolla habilidades para liderar y adaptarse a los cambios organizacionales de manera efectiva.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Adaptabilidad</span>
+                            <span class="feature-tag">Gestión del cambio</span>
+                            <span class="feature-tag">Resiliencia organizacional</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/wNPgrPE.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Mentalidad de Crecimiento en Equipos de Trabajo</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Fomenta una mentalidad de crecimiento que impulse la innovación y el desarrollo continuo del equipo.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Mentalidad de crecimiento</span>
+                            <span class="feature-tag">Innovación</span>
+                            <span class="feature-tag">Desarrollo continuo</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/5gsczRT.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Diversidad e Inclusión como Fuerza de Equipo</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Aprende a crear equipos diversos e inclusivos que potencien la creatividad y el rendimiento organizacional.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Diversidad e inclusión</span>
+                            <span class="feature-tag">Equipos inclusivos</span>
+                            <span class="feature-tag">Creatividad organizacional</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/L19GRCJ.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Cultura de Accountability: Responsabilidad Compartida</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Desarrolla una cultura de responsabilidad compartida donde cada miembro del equipo se compromete con los resultados.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Responsabilidad compartida</span>
+                            <span class="feature-tag">Accountability</span>
+                            <span class="feature-tag">Cultura organizacional</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/H759vWQ.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Liderazgo Situacional</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Aprende a adaptar tu estilo de liderazgo según las situaciones y necesidades específicas de tu equipo.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Liderazgo adaptativo</span>
+                            <span class="feature-tag">Estilos de liderazgo</span>
+                            <span class="feature-tag">Situaciones específicas</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/XOHTzWm.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Liderazgo Consciente y Empático</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Desarrolla un estilo de liderazgo basado en la consciencia emocional y la empatía para inspirar a tu equipo.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Inteligencia emocional</span>
+                            <span class="feature-tag">Liderazgo empático</span>
+                            <span class="feature-tag">Autoliderazgo</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="transversal">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/9rgdB4f.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge transversal">Transversal</span>
+                        <h3 class="course-title">Cómo Dar Retroalimentación Efectiva</h3>
+                        <p class="course-duration">⏱️ 8 a 12 horas</p>
+                        <p class="course-description">Aprende técnicas para brindar feedback constructivo que motive el crecimiento y mejore el desempeño.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Técnicas de feedback</span>
+                            <span class="feature-tag">Comunicación constructiva</span>
+                            <span class="feature-tag">Desarrollo de talento</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nosotros" class="section">
+            <h2 class="section-title">Acerca de Formación y Capacitación de México</h2>
+            <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; margin-bottom: 3rem;">
+                    <div style="text-align: left;">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #1f2937;">¿Quiénes Somos?</h3>
+                        <p style="font-size: 1.1rem; line-height: 1.7; color: #4b5563; margin-bottom: 1.5rem;">
+                            Somos una plataforma innovadora de cursos en línea comprometida con transformar la forma de aprender en la industria hotelera. 
+                        </p>
+                        <p style="font-size: 1.1rem; line-height: 1.7; color: #4b5563;">
+                            Nuestro objetivo es humanizar la información, haciéndola más accesible y comprensible, mientras mantenemos la atención de nuestros usuarios a través de un formato innovador y atractivo.
+                        </p>
+                    </div>
+                    <div style="text-align: center;">
+                        <div style="background: linear-gradient(135deg, #16a34a, #22c55e); color: white; padding: 2rem; border-radius: 20px; box-shadow: 0 15px 35px rgba(22, 163, 74, 0.2);">
+                            <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">Nuestra Visión</h4>
+                            <p style="font-size: 1rem; line-height: 1.6;">
+                                Ser la plataforma líder de capacitación hotelera en el mercado hispanohablante, reconocida por la calidad y utilidad de nuestros cursos.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="background: #f8fafc; padding: 3rem; border-radius: 20px; margin-top: 3rem;">
+                    <h3 style="font-size: 1.8rem; margin-bottom: 2rem; color: #1f2937;">Nuestra Escalera de Valor</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                        <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                            <div style="background: #fef2f2; color: #dc2626; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">1</div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #1f2937;">Mini-Curso</h4>
+                            <p style="color: #6b7280; font-size: 0.9rem;">Introducción básica (30-60 min)</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                            <div style="background: #f0fdf4; color: #16a34a; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">2</div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #1f2937;">Curso Completo</h4>
+                            <p style="color: #6b7280; font-size: 0.9rem;">Formación integral (4-6 horas)</p>
+                        </div>
+                        <div style="background: white; padding: 2rem; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+                            <div style="background: #f0f9ff; color: #2563eb; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-size: 1.5rem; font-weight: bold;">3</div>
+                            <h4 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: #1f2937;">Masterclass</h4>
+                            <p style="color: #6b7280; font-size: 0.9rem;">Especialización avanzada (+12 horas)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: #f8fafc;">
+            <h2 class="section-title">Nuestro Equipo Fundador</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; max-width: 1000px; margin: 0 auto;">
+                <div style="background: white; padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #16a34a, #22c55e); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">JM</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #1f2937;">Joshua Mancilla</h3>
+                    <p style="color: #16a34a; font-weight: 600; margin-bottom: 1rem;">CEO & Fundador</p>
+                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.6;">Visionario y líder estratégico con experiencia en desarrollo de negocios y gestión empresarial.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #2563eb, #3b82f6); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">DF</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #1f2937;">Diego Fernández</h3>
+                    <p style="color: #2563eb; font-weight: 600; margin-bottom: 1rem;">CTO</p>
+                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.6;">Experto en tecnología e innovación, responsable del desarrollo de nuestra plataforma educativa.</p>
+                </div>
+                <div style="background: white; padding: 2rem; border-radius: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-10px)'" onmouseout="this.style.transform='translateY(0)'">
+                    <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #dc2626, #ef4444); border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem; font-weight: bold;">BM</div>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #1f2937;">Bruno Medina</h3>
+                    <p style="color: #dc2626; font-weight: 600; margin-bottom: 1rem;">COO</p>
+                    <p style="color: #6b7280; font-size: 0.95rem; line-height: 1.6;">Especialista en operaciones y procesos, asegura la excelencia en la ejecución de nuestros programas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="instructores" class="section">
+            <h2 class="section-title">¿Eres Experto en Hotelería?</h2>
+            <div style="background: white; border-radius: 30px; padding: 4rem 2rem; box-shadow: 0 15px 35px rgba(0,0,0,0.1); max-width: 1000px; margin: 0 auto;">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h3 style="font-size: 2rem; margin-bottom: 1rem; color: #1f2937;">Únete a Nuestro Equipo de Instructores</h3>
+                    <p style="font-size: 1.2rem; color: #6b7280; max-width: 700px; margin: 0 auto;">
+                        Comparte tu conocimiento con profesionales hoteleros de toda Latinoamérica y genera ingresos adicionales.
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                    <div>
+                        <h4 style="font-size: 1.5rem; margin-bottom: 1.5rem; color: #1f2937;">Beneficios para Instructores</h4>
+                        <div style="space-y: 1rem;">
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 10px;">
+                                <div style="background: #16a34a; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">✓</div>
+                                <span style="color: #374151; font-weight: 500;">Ingresos pasivos por cada venta</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 10px;">
+                                <div style="background: #16a34a; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">✓</div>
+                                <span style="color: #374151; font-weight: 500;">Apoyo completo en creación de contenido</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 10px;">
+                                <div style="background: #16a34a; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">✓</div>
+                                <span style="color: #374151; font-weight: 500;">Marketing y promoción profesional</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 10px;">
+                                <div style="background: #16a34a; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 1rem; flex-shrink: 0;">✓</div>
+                                <span style="color: #374151; font-weight: 500;">Visibilidad en el sector hotelero</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: center;">
+                                                    <h5 style="font-size: 1.3rem; margin-bottom: 1rem;">Proceso Simple</h5>
+                            <div style="text-align: left; font-size: 0.95rem; line-height: 1.6;">
+                                <p style="margin-bottom: 0.8rem;">📋 Consulta de tu expertise</p>
+                                <p style="margin-bottom: 0.8rem;">🎯 Desarrollo conjunto del curso</p>
+                                <p style="margin-bottom: 0.8rem;">🎬 Grabación profesional</p>
+                                <p style="margin-bottom: 0.8rem;">📈 Lanzamiento y promoción</p>
+                                <p>💰 Ganancias recurrentes</p>
+                            </div>
+                        </div>
+                        <button style="background: linear-gradient(135deg, #16a34a, #22c55e); color: white; padding: 1rem 2rem; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 10px 25px rgba(22, 163, 74, 0.3)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                            Aplicar como Instructor
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certification-section">
+            <div class="section">
+                <h2 class="section-title">Nuestra Certificación y Metodología</h2>
+                <div class="certification-grid">
+                    <div class="cert-item">
+                        <div class="cert-icon">🎓</div>
+                        <h3>Modalidad Flexible</h3>
+                        <p>Los cursos se imparten <strong>de manera presencial y a distancia</strong>, según convenga al interesado.</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">⚖️</div>
+                        <h3>Metodología Equilibrada</h3>
+                        <p>El contenido de los módulos es <strong>50% teórico y 50% práctico</strong>.</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">✅</div>
+                        <h3>Certificación STPS</h3>
+                        <p>Somos una empresa con <strong>certificación por parte de la STPS</strong>.</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">📋</div>
+                        <h3>Documentación Completa</h3>
+                        <p><strong>Entregamos</strong> todos los formatos para solventar los requerimientos de la STPS: DC-2, DC-3, DC-5.</p>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">👨‍🎓</div>
+                        <h3>Profesores Altamente Calificados</h3>
+                        <p>Nuestros capacitadores son <strong>profesores con alto nivel de estudios</strong>: Maestría y Doctorado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="comunidad" class="section">
+            <div class="community">
+                <div class="community-content">
+                    <h2>Únete a Nuestra Comunidad Hotelera</h2>
+                    <p>Conecta con profesionales del sector hotelero de todo México y Latinoamérica. Comparte experiencias, resuelve dudas y mantente actualizado con las mejores prácticas de la industria.</p>
+                    
+                    <div class="community-stats">
+                        <div class="stat">
+                            <span class="stat-number">2,500+</span>
+                            <span class="stat-label">Profesionales Hoteleros</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">30</span>
+                            <span class="stat-label">Cursos Especializados</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Satisfacción</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Soporte</span>
+                        </div>
+                    </div>
+                    
+                    <button class="hero-cta" style="margin-top: 2rem;">Unirse a la Comunidad</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="section">
+            <h2 class="section-title">Contáctanos</h2>
+            <div class="contact">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>¿Tienes Preguntas?</h3>
+                        <p>Nuestro equipo está listo para ayudarte a encontrar el curso perfecto para tu desarrollo profesional en la industria hotelera.</p>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <span>(442) 263-1310</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+                            </svg>
+                            <span>(442) 748-8683</span>
+                        </div>
+
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+                            </svg>
+                            <span>formacionycapacitaciondemexico@gmail.com</span>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Querétaro, México</span>
+                        </div>
+
+                        <div class="contact-item">
+                            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Lun - Vie: 9:00 AM - 6:00 PM</span>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Nombre Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="hotel">Hotel/Empresa</label>
+                            <input type="text" id="hotel" name="hotel" placeholder="Nombre de tu hotel o empresa">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="position">Posición/Departamento</label>
+                            <select id="position" name="position">
+                                <option value="">Selecciona tu área</option>
+                                <option value="gerencia">Gerencia General</option>
+                                <option value="rrhh">Recursos Humanos</option>
+                                <option value="recepcion">Recepción</option>
+                                <option value="housekeeping">Housekeeping</option>
+                                <option value="alimentos">Alimentos y Bebidas</option>
+                                <option value="mantenimiento">Mantenimiento</option>
+                                <option value="ventas">Ventas y Marketing</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" required placeholder="¿Cómo podemos ayudarte? ¿Qué cursos te interesan?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3>Formación y Capacitación de México</h3>
+            <p>Desarrollando grandes personas con grandes resultados en la industria hotelera</p>
+            <p>&copy; 2025 Formación y Capacitación de México. Todos los derechos reservados.</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">F</a>
+                <a href="#" class="social-link">IG</a>
+                <a href="#" class="social-link">LI</a>
+                <a href="#" class="social-link">@</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const courseCards = document.querySelectorAll('.course-card');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                categoryButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+
+                const selectedCategory = this.getAttribute('data-category');
+
+                courseCards.forEach(card => {
+                    if (selectedCategory === 'todos' || card.getAttribute('data-category') === selectedCategory) {
+                        card.classList.remove('hidden');
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const hotel = formData.get('hotel');
+            const position = formData.get('position');
+            const message = formData.get('message');
+            
+            if (!name || !email || !message) {
+                alert('Por favor, completa todos los campos obligatorios.');
+                return;
+            }
+            
+            let confirmMessage = `¡Gracias ${name}! Tu mensaje ha sido enviado exitosamente.\n\nTe contactaremos pronto a ${email}`;
+            if (hotel) confirmMessage += ` para hablar sobre las necesidades de capacitación de ${hotel}`;
+            confirmMessage += '.';
+            
+            alert(confirmMessage);
+            this.reset();
+        });
+
+        document.querySelectorAll('.course-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const courseTitle = this.parentElement.querySelector('.course-title').textContent;
+                alert(`¡Excelente elección!\n\nCurso: ${courseTitle}\n\nSerás redirigido a la página de inscripción donde podrás conocer más detalles del programa, metodología y fechas disponibles.`);
+            });
+        });
+
+        document.querySelectorAll('.cta-button, .hero-cta').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const coursesSection = document.getElementById('cursos');
+                if (coursesSection) {
+                    coursesSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.course-card').forEach(card => {
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'white';
+                navLinks.style.padding = '1rem';
+                navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        document.querySelector('.community .hero-cta').addEventListener('click', function() {
+            alert('¡Bienvenido a la comunidad de Formación y Capacitación de México!\n\nSerás redirigido a nuestro portal de registro donde podrás:\n\n• Acceder a contenido exclusivo\n• Participar en foros de discusión\n• Conectar con otros profesionales\n• Recibir actualizaciones de la industria\n• Acceder a webinars gratuitos');
+        });
+
+        document.querySelector('button[onmouseover*="translateY(-2px)"]').addEventListener('click', function() {
+            alert('¡Gracias por tu interés en ser instructor de Formación y Capacitación de México!\n\nSerás redirigido a nuestro formulario de aplicación donde podrás:\n\n• Compartir tu experiencia en hotelería\n• Proponer temas de tu especialidad\n• Conocer nuestro proceso de colaboración\n• Iniciar tu camino como instructor\n\n¡Esperamos trabajar contigo!');
+        });
+    </script>
+</body>
+</html>
+                            Desarrolla habilidades de liderazgo y gestión de equipos específicamente diseñadas para el entorno hotelero, mejorando el desempeño del personal administrativo.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Clases prácticas</span>
+                            <span class="feature-tag">Role play</span>
+                            <span class="feature-tag">Análisis de casos</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="administrativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/YpUbidb.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge administrativo">Administrativo</span>
+                        <h3 class="course-title">Comunicación Efectiva y Resolución de Conflictos</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla habilidades relacionadas con comunicación efectiva y resolución de conflictos, con énfasis en su aplicación dentro del entorno hotelero.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Simulaciones</span>
+                            <span class="feature-tag">Videos prácticos</span>
+                            <span class="feature-tag">Ejercicios grupales</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="administrativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/D00a3E5.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge administrativo">Administrativo</span>
+                        <h3 class="course-title">Gestión del Tiempo y Productividad</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla habilidades relacionadas con gestión del tiempo y productividad, con énfasis en su aplicación dentro del entorno hotelero.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Herramientas prácticas</span>
+                            <span class="feature-tag">Checklist</span>
+                            <span class="feature-tag">Manual incluido</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="administrativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/96CTHK4.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge administrativo">Administrativo</span>
+                        <h3 class="course-title">Gestión de la Experiencia del Cliente</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla habilidades relacionadas con gestión de la experiencia del cliente, con énfasis en su aplicación dentro del entorno hotelero.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Casos reales</span>
+                            <span class="feature-tag">Metodología práctica</span>
+                            <span class="feature-tag">Ejercicio final</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="administrativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/rfsvzEx.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge administrativo">Administrativo</span>
+                        <h3 class="course-title">Manejo de Quejas y Recuperación del Servicio</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla habilidades relacionadas con manejo de quejas y recuperación del servicio, con énfasis en su aplicación dentro del entorno hotelero.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Técnicas de recuperación</span>
+                            <span class="feature-tag">Role play</span>
+                            <span class="feature-tag">Casos prácticos</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="administrativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/AbKHEh3.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge administrativo">Administrativo</span>
+                        <h3 class="course-title">Planificación y Organización de Eventos</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla habilidades relacionadas con planificación y organización de eventos, con énfasis en su aplicación dentro del entorno hotelero.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Planificación estratégica</span>
+                            <span class="feature-tag">Logística de eventos</span>
+                            <span class="feature-tag">Gestión de proveedores</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="administrativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/zSNDumc.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge administrativo">Administrativo</span>
+                        <h3 class="course-title">Análisis de Indicadores de Desempeño (KPIs)</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla habilidades relacionadas con análisis de indicadores de desempeño (KPIs), con énfasis en su aplicación dentro del entorno hotelero.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Análisis de datos</span>
+                            <span class="feature-tag">Dashboard hotelero</span>
+                            <span class="feature-tag">Toma de decisiones</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="operativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/UVi54O8.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge operativo">Operativo</span>
+                        <h3 class="course-title">Atención al Cliente y Hospitalidad</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla habilidades relacionadas con atención al cliente y hospitalidad, con énfasis en su aplicación dentro del entorno hotelero.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Protocolo de servicio</span>
+                            <span class="feature-tag">Técnicas de hospitalidad</span>
+                            <span class="feature-tag">Práctica vivencial</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="operativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/hXNUwId.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge operativo">Operativo</span>
+                        <h3 class="course-title">Seguridad en el Trabajo y Prevención de Riesgos</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">Desarrolla habilidades relacionadas con seguridad en el trabajo y prevención de riesgos, con énfasis en su aplicación dentro del entorno hotelero.</p>
+                        <div class="course-features">
+                            <span class="feature-tag">Normas de seguridad</span>
+                            <span class="feature-tag">Prevención de riesgos</span>
+                            <span class="feature-tag">Protocolos de emergencia</span>
+                        </div>
+                        <button class="course-btn">Ver Detalles</button>
+                    </div>
+                </div>
+
+                <div class="course-card" data-category="operativo">
+                    <div class="course-image" style="background-image: url('https://i.imgur.com/gWcQcDx.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-content">
+                        <span class="course-badge operativo">Operativo</span>
+                        <h3 class="course-title">Trabajo en Equipo y Colaboración</h3>
+                        <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
+                        <p class="course-description">
