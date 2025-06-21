@@ -1143,7 +1143,24 @@
         document.querySelectorAll('.course-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const courseTitle = this.parentElement.querySelector('.course-title').textContent;
-                alert(`¡Excelente elección!\n\nCurso: ${courseTitle}\n\nSerás redirigido a la página de inscripción donde podrás conocer más detalles del programa, metodología y fechas disponibles.`);
+                
+                // Ir a la sección de contacto
+                const contactSection = document.getElementById('contacto');
+                if (contactSection) {
+                    contactSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Opcional: Pre-llenar el mensaje con el curso seleccionado
+                setTimeout(() => {
+                    const messageField = document.getElementById('message');
+                    if (messageField) {
+                        messageField.value = `Hola, me interesa obtener más información sobre el curso: ${courseTitle}`;
+                        messageField.focus();
+                    }
+                }, 800);
             });
         });
 
