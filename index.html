@@ -106,17 +106,6 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            font-size: 15rem;
-            opacity: 0.1;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 1;
-        }
-
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
@@ -225,13 +214,12 @@
 
         .course-image {
             width: 100%;
-            height: 550px;
+            height: 580px;
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             position: relative;
             overflow: hidden;
-            border-radius: 15px 15px 0 0;
         }
 
         .course-content {
@@ -315,63 +303,6 @@
         .course-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
-        }
-
-        .community {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: white;
-            border-radius: 30px;
-            margin: 3rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .community-content {
-            padding: 4rem 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .community::before {
-            content: '';
-            position: absolute;
-            font-size: 12rem;
-            opacity: 0.1;
-            top: 50%;
-            right: 10%;
-            transform: translateY(-50%);
-        }
-
-        .community h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        .community p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-size: 1.1rem;
-            opacity: 0.8;
         }
 
         .certification-section {
@@ -513,38 +444,6 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        
-        .form-message {
-            padding: 1rem;
-            border-radius: 10px;
-            margin-bottom: 1rem;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .form-message.success {
-            background: #dcfce7;
-            color: #166534;
-            border: 1px solid #bbf7d0;
-        }
-
-        .form-message.error {
-            background: #fef2f2;
-            color: #dc2626;
-            border: 1px solid #fecaca;
-        }
-
-        .form-message.loading {
-            background: #dbeafe;
-            color: #1d4ed8;
-            border: 1px solid #bfdbfe;
-        }
-
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
 
         .submit-btn:hover {
             transform: translateY(-2px);
@@ -611,10 +510,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .community-stats {
-                grid-template-columns: 1fr;
-            }
-
             .category-nav {
                 gap: 0.5rem;
             }
@@ -626,26 +521,6 @@
 
             .certification-grid {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: #333;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
             }
         }
     </style>
@@ -661,11 +536,6 @@
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
             <button class="cta-button">Empezar Gratis</button>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
@@ -691,7 +561,7 @@
             <div class="courses-grid" id="coursesGrid">
                 <!-- Cursos Administrativos -->
                 <div class="course-card" data-category="administrativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/IbmAznA.jpeg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/1.png');"></div>
                     <div class="course-content">
                         <span class="course-badge administrativo">Liderazgo</span>
                         <h3 class="course-title">Liderazgo y Gestión de Equipos Empresariales</h3>
@@ -707,7 +577,7 @@
                 </div>
 
                 <div class="course-card" data-category="administrativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/YpUbidb.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/2.png');"></div>
                     <div class="course-content">
                         <span class="course-badge administrativo">Liderazgo</span>
                         <h3 class="course-title">Comunicación Efectiva y Resolución de Conflictos</h3>
@@ -723,7 +593,7 @@
                 </div>
 
                 <div class="course-card" data-category="administrativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/D00a3E5.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/3.png');"></div>
                     <div class="course-content">
                         <span class="course-badge administrativo">Liderazgo</span>
                         <h3 class="course-title">Gestión del Tiempo y Productividad</h3>
@@ -739,7 +609,7 @@
                 </div>
 
                 <div class="course-card" data-category="administrativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/96CTHK4.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/4.png');"></div>
                     <div class="course-content">
                         <span class="course-badge administrativo">Liderazgo</span>
                         <h3 class="course-title">Gestión de la Experiencia del Cliente</h3>
@@ -755,7 +625,7 @@
                 </div>
 
                 <div class="course-card" data-category="administrativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/rfsvzEx.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/5.png');"></div>
                     <div class="course-content">
                         <span class="course-badge administrativo">Liderazgo</span>
                         <h3 class="course-title">Manejo de Quejas y Recuperación del Servicio</h3>
@@ -771,7 +641,7 @@
                 </div>
 
                 <div class="course-card" data-category="administrativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/AbKHEh3.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/6.png');"></div>
                     <div class="course-content">
                         <span class="course-badge administrativo">Liderazgo</span>
                         <h3 class="course-title">Planificación y Organización de Eventos Corporativos</h3>
@@ -787,7 +657,7 @@
                 </div>
 
                 <div class="course-card" data-category="administrativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/zSNDumc.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/7.png');"></div>
                     <div class="course-content">
                         <span class="course-badge administrativo">Liderazgo</span>
                         <h3 class="course-title">Análisis de Indicadores de Desempeño (KPIs)</h3>
@@ -804,7 +674,7 @@
 
                 <!-- Cursos Operacionales -->
                 <div class="course-card" data-category="operativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/ZloXg0J.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/8.png');"></div>
                     <div class="course-content">
                         <span class="course-badge operativo">Operacional</span>
                         <h3 class="course-title">Sostenibilidad y Responsabilidad Social Empresarial</h3>
@@ -820,7 +690,7 @@
                 </div>
 
                 <div class="course-card" data-category="operativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/UVi54O8.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/9.png');"></div>
                     <div class="course-content">
                         <span class="course-badge operativo">Operacional</span>
                         <h3 class="course-title">Atención al Cliente y Excelencia en el Servicio</h3>
@@ -836,7 +706,7 @@
                 </div>
 
                 <div class="course-card" data-category="operativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/hXNUwId.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/10.png');"></div>
                     <div class="course-content">
                         <span class="course-badge operativo">Operacional</span>
                         <h3 class="course-title">Seguridad en el Trabajo y Prevención de Riesgos</h3>
@@ -852,7 +722,7 @@
                 </div>
 
                 <div class="course-card" data-category="operativo">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/gWcQcDx.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/11.png');"></div>
                     <div class="course-content">
                         <span class="course-badge operativo">Operacional</span>
                         <h3 class="course-title">Trabajo en Equipo y Colaboración</h3>
@@ -869,7 +739,7 @@
 
                 <!-- Cursos de Desarrollo de Equipos -->
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/1ROT9pC.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/12.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Construcción de Equipos Efectivos (Team Building)</h3>
@@ -885,7 +755,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/qi394Le.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/13.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Comunicación Asertiva dentro de los Equipos</h3>
@@ -901,7 +771,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/76B8PwO.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/14.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Gestión de Conflictos en Entornos Colaborativos</h3>
@@ -917,7 +787,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/hu3H5Uz.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/15.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Toma de Decisiones en Equipo</h3>
@@ -933,7 +803,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/E96lqNS.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/16.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Coordinación y Confianza entre Áreas</h3>
@@ -949,7 +819,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/biObsQy.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/17.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Trabajo Intergeneracional: Colaborando con Distintas Edades</h3>
@@ -965,7 +835,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/gMN4Pf0.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/18.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Gestión del Cambio y Adaptabilidad Grupal</h3>
@@ -981,7 +851,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/wNPgrPE.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/19.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Mentalidad de Crecimiento en Equipos de Trabajo</h3>
@@ -997,7 +867,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/5gsczRT.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/20.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Diversidad e Inclusión como Fuerza de Equipo</h3>
@@ -1013,7 +883,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/L19GRCJ.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/21.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Cultura de Accountability: Responsabilidad Compartida</h3>
@@ -1029,7 +899,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/H759vWQ.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/22.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Liderazgo Situacional</h3>
@@ -1045,7 +915,7 @@
                 </div>
 
                 <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/XOHTzWm.jpg'); background-size: cover; background-position: center;"></div>
+                    <div class="course-image" style="background-image: url('./fotos3/23.png');"></div>
                     <div class="course-content">
                         <span class="course-badge transversal">Desarrollo de Equipos</span>
                         <h3 class="course-title">Liderazgo Consciente y Empático</h3>
@@ -1055,22 +925,6 @@
                             <span class="feature-tag">Inteligencia emocional</span>
                             <span class="feature-tag">Liderazgo empático</span>
                             <span class="feature-tag">Autoliderazgo</span>
-                        </div>
-                        <button class="course-btn">Ver Detalles</button>
-                    </div>
-                </div>
-
-                <div class="course-card" data-category="transversal">
-                    <div class="course-image" style="background-image: url('https://i.imgur.com/9rgdB4f.jpg'); background-size: cover; background-position: center;"></div>
-                    <div class="course-content">
-                        <span class="course-badge transversal">Desarrollo de Equipos</span>
-                        <h3 class="course-title">Cómo Dar Retroalimentación Efectiva</h3>
-                        <p class="course-duration">⏱️ 8 a 12 horas</p>
-                        <p class="course-description">Aprende técnicas para brindar feedback constructivo que motive el crecimiento profesional y mejore el desempeño empresarial.</p>
-                        <div class="course-features">
-                            <span class="feature-tag">Técnicas de feedback</span>
-                            <span class="feature-tag">Comunicación constructiva</span>
-                            <span class="feature-tag">Desarrollo de talento</span>
                         </div>
                         <button class="course-btn">Ver Detalles</button>
                     </div>
@@ -1175,18 +1029,7 @@
                         </div>
                     </div>
                     
-                    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                        <!-- Web3Forms Access Key -->
-                        <input type="hidden" name="access_key" value="f4c7bd61-fda6-4c23-ba91-f7988a847c80">
-                        
-                        <!-- Configuración adicional para Web3Forms -->
-                        <input type="hidden" name="subject" value="Nuevo mensaje de contacto - Formación y Capacitación de México">
-                        <input type="hidden" name="from_name" value="Página Web - Formación y Capacitación de México">
-                        <input type="hidden" name="redirect" value="false">
-                        
-                        <!-- Mensaje de estado (inicialmente oculto) -->
-                        <div id="formMessage" class="form-message" style="display: none;"></div>
-                        
+                    <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <label for="name">Nombre Completo *</label>
                             <input type="text" id="name" name="name" required>
@@ -1198,8 +1041,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="hotel">Empresa/Organización</label>
-                            <input type="text" id="hotel" name="hotel" placeholder="Nombre de tu empresa u organización">
+                            <label for="company">Empresa/Organización</label>
+                            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa u organización">
                         </div>
 
                         <div class="form-group">
@@ -1223,7 +1066,7 @@
                             <textarea id="message" name="message" required placeholder="¿Cómo podemos ayudarte? ¿Qué programas te interesan?"></textarea>
                         </div>
                         
-                        <button type="submit" class="submit-btn" id="submitBtn">Enviar Mensaje</button>
+                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
                     </form>
                 </div>
             </div>
@@ -1289,62 +1132,12 @@
             });
         });
 
-        // Manejo del formulario de contacto con Web3Forms
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        // Manejo del formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            
-            const form = e.target;
-            const formData = new FormData(form);
-            const submitBtn = document.getElementById('submitBtn');
-            const formMessage = document.getElementById('formMessage');
-            
-            // Mostrar estado de carga
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-            showMessage('Enviando mensaje...', 'loading');
-            
-            try {
-                const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    // Éxito
-                    showMessage('¡Mensaje enviado exitosamente! Te contactaremos pronto.', 'success');
-                    form.reset();
-                } else {
-                    // Error del servicio
-                    throw new Error(data.message || 'Error al enviar el mensaje');
-                }
-                
-            } catch (error) {
-                // Error de red o del servidor
-                console.error('Error:', error);
-                showMessage('Error al enviar el mensaje. Por favor, intenta nuevamente o contáctanos directamente.', 'error');
-            } finally {
-                // Restaurar el botón
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Enviar Mensaje';
-            }
+            alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
+            this.reset();
         });
-
-        // Función para mostrar mensajes de estado
-        function showMessage(message, type) {
-            const formMessage = document.getElementById('formMessage');
-            formMessage.textContent = message;
-            formMessage.className = `form-message ${type}`;
-            formMessage.style.display = 'block';
-            
-            // Ocultar el mensaje después de 5 segundos si es de éxito
-            if (type === 'success') {
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
-            }
-        }
 
         // Botones de cursos
         document.querySelectorAll('.course-btn').forEach(btn => {
@@ -1385,24 +1178,6 @@
         document.querySelectorAll('.course-card').forEach(card => {
             card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(card);
-        });
-
-        // Menú móvil
-        document.querySelector('.menu-toggle')?.addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = 'white';
-                navLinks.style.padding = '1rem';
-                navLinks.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            }
         });
     </script>
 </body>
