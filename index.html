@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Formación y Capacitación de México - Desarrollo de Talento Empresarial</title>
-  <!-- Google Fonts - Tipografía moderna -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formación y Capacitación de México - Nuestros Cursos</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      line-height: 1.6;
       margin: 0;
       padding: 0;
-      background-color: #fafbfc;
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
       color: #2d3748;
+      min-height: 100vh;
     }
     
     header {
@@ -39,7 +38,7 @@
     header h1 {
       position: relative;
       margin: 0;
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: 800;
       color: white;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
@@ -49,847 +48,378 @@
     
     header p {
       position: relative;
-      margin: 1.5rem 0 0 0;
-      font-size: 1.3rem;
+      margin: 1rem 0 0 0;
+      font-size: 1.2rem;
       color: white;
       opacity: 0.95;
       font-weight: 400;
     }
-    
+
     .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
     }
-    
-    h1 {
+
+    .intro-section {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .intro-section h2 {
       color: #004080;
       font-size: 2.5rem;
       font-weight: 700;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       letter-spacing: -0.025em;
     }
-    
-    h2 {
-      color: #004080;
-      font-size: 2rem;
-      font-weight: 700;
-      border-bottom: 3px solid #004080;
-      padding-bottom: 0.8rem;
-      margin-top: 3rem;
-      margin-bottom: 2rem;
-      letter-spacing: -0.02em;
-    }
-    
-    h3 {
-      color: #004080;
-      font-size: 1.4rem;
-      font-weight: 600;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-      letter-spacing: -0.015em;
-    }
-    
-    p {
-      font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
+
+    .intro-section p {
+      font-size: 1.1rem;
       color: #4a5568;
-      font-weight: 400;
-    }
-    
-    .section-spacing {
-      margin: 4rem 0;
-    }
-    
-    .cta {
-      display: inline-block;
-      margin: 1rem 0.5rem 1rem 0;
-      padding: 0.9rem 1.8rem;
-      background: linear-gradient(135deg, #059669 0%, #047857 100%);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 10px rgba(5, 150, 105, 0.3);
-    }
-    
-    .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(5, 150, 105, 0.4);
-      text-decoration: none;
-      color: white;
-    }
-    
-    .cta.secondary {
-      background: linear-gradient(135deg, #ff6600 0%, #e55a00 100%);
-      box-shadow: 0 2px 10px rgba(255, 102, 0, 0.3);
-    }
-    
-    .cta.secondary:hover {
-      box-shadow: 0 4px 20px rgba(255, 102, 0, 0.4);
-    }
-    
-    .info-box {
-      background: linear-gradient(135deg, #e6f3ff 0%, #f0f8ff 100%);
-      padding: 1.8rem;
-      border-left: 5px solid #004080;
-      margin: 1.5rem 0;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 64, 128, 0.1);
-    }
-    
-    .founder-box {
-      background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-      padding: 2.5rem;
-      border-left: 5px solid #0066cc;
-      margin: 2rem 0;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0, 102, 204, 0.15);
-    }
-    
-    .courses-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    
-    .course-card {
-      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-      padding: 1.8rem;
-      border-radius: 12px;
-      border-left: 4px solid #004080;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 15px rgba(0, 64, 128, 0.08);
-    }
-    
-    .course-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(0, 64, 128, 0.15);
-    }
-    
-    .course-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
-      color: white;
-      padding: 0.4rem 1rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px rgba(0, 64, 128, 0.3);
-    }
-    
-    .course-badge.operativo {
-      background: linear-gradient(135deg, #059669 0%, #047857 100%);
-      box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);
-    }
-    
-    .course-badge.transversal {
-      background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-      box-shadow: 0 2px 8px rgba(107, 114, 128, 0.3);
-    }
-    
-    .course-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      color: #1a202c;
-      letter-spacing: -0.01em;
-    }
-    
-    .course-duration {
-      color: #718096;
-      margin-bottom: 1rem;
-      font-weight: 500;
-    }
-    
-    .course-description {
-      color: #4a5568;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto;
       line-height: 1.6;
     }
     
-    .category-nav {
-      text-align: center;
-      margin: 2rem 0;
+    .categorias {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
     }
     
-    .category-btn {
+    .categoria {
+      background: white;
+      border-left: 6px solid #004080;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .categoria::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(0,64,128,0.02) 0%, rgba(0,102,204,0.02) 100%);
+      pointer-events: none;
+    }
+    
+    .categoria:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0,64,128,0.15);
+    }
+
+    .categoria.liderazgo {
+      border-left-color: #004080;
+    }
+
+    .categoria.operacional {
+      border-left-color: #059669;
+    }
+
+    .categoria.desarrollo {
+      border-left-color: #6b7280;
+    }
+
+    .categoria h2 {
+      position: relative;
+      color: #1a202c;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .categoria .emoji {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .categoria p {
+      position: relative;
+      color: #4a5568;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .curso-count {
+      display: inline-block;
+      background: linear-gradient(135deg, #e6f3ff 0%, #f0f8ff 100%);
+      color: #004080;
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .categoria.operacional .curso-count {
+      background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 100%);
+      color: #059669;
+    }
+
+    .categoria.desarrollo .curso-count {
+      background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+      color: #6b7280;
+    }
+    
+    .categoria a {
+      position: relative;
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,64,128,0.3);
+    }
+
+    .categoria.operacional a {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      box-shadow: 0 4px 15px rgba(5,150,105,0.3);
+    }
+
+    .categoria.desarrollo a {
+      background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+      box-shadow: 0 4px 15px rgba(107,114,128,0.3);
+    }
+    
+    .categoria a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0,64,128,0.4);
+    }
+
+    .categoria.operacional a:hover {
+      box-shadow: 0 6px 25px rgba(5,150,105,0.4);
+    }
+
+    .categoria.desarrollo a:hover {
+      box-shadow: 0 6px 25px rgba(107,114,128,0.4);
+    }
+
+    .info-box {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      margin: 3rem 0;
+      border-left: 5px solid #004080;
+    }
+
+    .info-box h3 {
+      color: #004080;
+      margin-top: 0;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .benefit {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .benefit:hover {
+      transform: translateX(5px);
+    }
+
+    .benefit strong {
+      color: #004080;
+      margin-right: 0.5rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.75rem 1.5rem;
       background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
       color: #4a5568;
-      border: 2px solid transparent;
-      padding: 0.7rem 1.4rem;
-      margin: 0.3rem;
-      border-radius: 30px;
+      text-decoration: none;
+      border-radius: 8px;
       font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
       transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border: 2px solid #e2e8f0;
     }
-    
-    .category-btn.active,
-    .category-btn:hover {
+
+    .back-btn:hover {
       background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
       color: white;
       border-color: #004080;
       transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 64, 128, 0.3);
-    }
-    
-    ul {
-      padding-left: 1.2rem;
-    }
-    
-    li {
-      margin-bottom: 0.6rem;
-      color: #4a5568;
-    }
-    
-    .contact-section {
-      background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
-      padding: 2.5rem;
-      border-radius: 12px;
-      margin: 2rem 0;
-      box-shadow: 0 4px 20px rgba(0, 64, 128, 0.1);
-    }
-    
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: start;
-    }
-    
-    .contact-info {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-    
-    .contact-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      padding: 1rem;
-      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-      border-radius: 8px;
-      transition: all 0.2s ease;
     }
 
-    .contact-item:hover {
-      transform: translateX(5px);
-      box-shadow: 0 2px 10px rgba(0, 64, 128, 0.1);
-    }
-    
-    .contact-icon {
-      width: 22px;
-      height: 22px;
-      margin-right: 1rem;
-      color: #004080;
-    }
-    
-    .contact-form {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    }
-    
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    
-    .form-group label {
-      display: block;
-      margin-bottom: 0.6rem;
-      font-weight: 600;
-      color: #2d3748;
-      font-size: 0.95rem;
-    }
-    
-    .form-group input,
-    .form-group textarea,
-    .form-group select {
-      width: 100%;
-      padding: 0.9rem;
-      border: 2px solid #e2e8f0;
-      border-radius: 8px;
-      font-size: 1rem;
-      box-sizing: border-box;
-      transition: all 0.3s ease;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    .form-group input:focus,
-    .form-group textarea:focus,
-    .form-group select:focus {
-      outline: none;
-      border-color: #004080;
-      box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.1);
-    }
-    
-    .submit-btn {
-      width: 100%;
-      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
-      color: white;
-      border: none;
-      padding: 1.1rem;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-family: 'Inter', sans-serif;
-      box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);
-    }
-    
-    .submit-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 25px rgba(22, 163, 74, 0.4);
-    }
-    
     footer {
       background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
       color: white;
       text-align: center;
-      padding: 2.5rem;
+      padding: 2rem;
       margin-top: 3rem;
     }
     
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 25px;
-      right: 25px;
-      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
-      color: #FFF;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-      box-shadow: 0 12px 35px rgba(37, 211, 102, 0.5);
-      text-decoration: none;
-      color: white;
-    }
-    
-    .hidden {
-      display: none;
-    }
-
-    /* Secciones con fondo gris suave alternado */
-    .section-alt {
-      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-      padding: 3rem 1.5rem;
-      margin: 3rem -1.5rem;
-      border-radius: 12px;
-    }
-    
     @media (max-width: 768px) {
-      .courses-grid {
+      .categorias {
         grid-template-columns: 1fr;
-      }
-      
-      .contact-grid {
-        grid-template-columns: 1fr;
+        gap: 1.5rem;
       }
       
       header h1 {
         font-size: 2.2rem;
       }
-      
-      .category-btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.85rem;
-      }
 
-      .section-alt {
-        margin: 2rem -1.5rem;
-        padding: 2rem 1.5rem;
+      .categoria {
+        padding: 2rem;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Formación y Capacitación de México</h1>
-    <p>Desarrollamos líderes y equipos excepcionales que impulsan el éxito organizacional</p>
+    <h1>Nuestros Programas de Capacitación</h1>
+    <p>Elige la categoría que mejor se adapte a tus necesidades de desarrollo profesional</p>
   </header>
 
   <div class="container">
-    <div class="section-spacing">
-      <h2>Sobre Nosotros</h2>
-      <p>
-        Somos especialistas en capacitación empresarial con <strong>certificación STPS</strong>. Ofrecemos programas diseñados para maximizar el potencial de tu equipo y acelerar resultados empresariales.
-      </p>
+    <div class="intro-section">
+      <h2>Explora Nuestras Especialidades</h2>
+      <p>Contamos con programas especializados diseñados para potenciar diferentes aspectos del desarrollo empresarial y profesional</p>
+    </div>
 
-      <div class="info-box">
-        <strong>✅ Certificación STPS</strong> - Entregamos todos los formatos: DC-2, DC-3, DC-5<br />
-        <strong>🎓 Modalidad Flexible</strong> - Presencial y a distancia<br />
-        <strong>⚖️ Metodología Equilibrada</strong> - 50% teórico y 50% práctico<br />
-        <strong>👨‍🎓 Profesores Calificados</strong> - Maestría y Doctorado
+    <div class="categorias">
+      <div class="categoria liderazgo">
+        <div class="emoji">🧭</div>
+        <h2>Liderazgo Empresarial</h2>
+        <div class="curso-count">7 cursos disponibles</div>
+        <p>Desarrolla habilidades de liderazgo, gestión de equipos y toma de decisiones estratégicas para impulsar el crecimiento organizacional.</p>
+        <a href="cursos_liderazgo.html">Ver Cursos de Liderazgo</a>
+      </div>
+
+      <div class="categoria operacional">
+        <div class="emoji">⚙️</div>
+        <h2>Operaciones y Servicio</h2>
+        <div class="curso-count">4 cursos disponibles</div>
+        <p>Optimiza procesos operacionales, mejora la atención al cliente y desarrolla prácticas sostenibles en tu organización.</p>
+        <a href="cursos_operacionales.html">Ver Cursos Operacionales</a>
+      </div>
+
+      <div class="categoria desarrollo">
+        <div class="emoji">🤝</div>
+        <h2>Desarrollo de Equipos</h2>
+        <div class="curso-count">10 cursos disponibles</div>
+        <p>Fortalece la cohesión del equipo, mejora la comunicación interna y desarrolla una cultura de colaboración efectiva.</p>
+        <a href="cursos_desarrollo.html">Ver Cursos de Equipos</a>
       </div>
     </div>
 
-    <div class="section-spacing">
-      <div class="founder-box">
-        <h3 style="color: #004080; margin-top: 0; font-size: 1.6rem; text-align: center;">Martha Peña - Fundadora y Directora General</h3>
-        <p style="text-align: center;"><strong>MBA por University of Alberta</strong> y <strong>Maestría en Finanzas por ITESM</strong>. Ex-catedrática del <strong>Tecnológico de Monterrey</strong> con experiencia ejecutiva en empresas transnacionales como <strong>Cargill</strong> y <strong>Archer Daniels Midland</strong>.</p>
-        <p style="color: #004080; font-style: italic; font-weight: 600; text-align: center; font-size: 1.1rem;">"Su liderazgo inspira, motiva y transforma."</p>
-      </div>
-    </div>
-
-    <div class="section-spacing">
-      <div class="section-alt">
-        <h2 style="color: #004080; text-align: center; margin-bottom: 2rem; font-size: 2.2rem; border: none; padding-bottom: 0;">¿Quiénes somos?</h2>
-        <p style="font-size: 1.1rem; text-align: center; margin-bottom: 3rem; color: #4a5568;">
-          Somos una plataforma de capacitación empresarial especializada en <strong>temas de negocios para freelancers, emprendedores y profesionales</strong>. 
-          Ofrecemos programas prácticos, accesibles y enfocados en el crecimiento personal y profesional de nuestros participantes.
+    <div class="container" style="margin-top: 4rem;">
+      <!-- Sección de Misión, Visión y Valores -->
+      <div style="background: white; padding: 3rem 2rem; border-radius: 16px; box-shadow: 0 6px 25px rgba(0,0,0,0.08); margin: 3rem 0;">
+        <h2 style="color: #004080; text-align: center; margin-bottom: 2.5rem; font-size: 2.2rem; border: none; padding-bottom: 0;">¿Quiénes somos?</h2>
+        <p style="font-size: 1.1rem; text-align: center; margin-bottom: 3rem; color: #4a5568; max-width: 700px; margin-left: auto; margin-right: auto;">
+          Somos una plataforma de capacitación empresarial especializada en <strong>desarrollo profesional y crecimiento personal para personas de todos los niveles</strong>. 
+          Ofrecemos programas prácticos, accesibles y enfocados en potenciar las habilidades y competencias de nuestros participantes.
         </p>
         
         <hr style="margin: 2.5rem 0; border: 0; border-top: 2px solid #cbd5e0; width: 80%; margin-left: auto; margin-right: auto;"/>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 2rem;">
-          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-            <h3 style="color: #004080; margin-top: 0; display: flex; align-items: center; font-size: 1.5rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+          <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #004080;">
+            <h3 style="color: #004080; margin-top: 0; display: flex; align-items: center; font-size: 1.5rem; gap: 0.5rem;">
               🎯 Misión
             </h3>
-            <p style="line-height: 1.6; font-size: 1rem;">
-              <strong>Capacitar y transformar a profesionales independientes</strong> mediante cursos prácticos, accesibles y de alta calidad en temas empresariales, ayudándolos a desarrollar su ventaja competitiva y alcanzar el éxito profesional.
+            <p style="line-height: 1.6; font-size: 1rem; color: #4a5568; margin: 0;">
+              <strong>Capacitar y transformar a personas de todos los niveles profesionales</strong> mediante cursos prácticos, accesibles y de alta calidad en temas empresariales, ayudándolos a desarrollar sus competencias y alcanzar sus metas profesionales y personales.
             </p>
           </div>
 
-          <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
-            <h3 style="color: #004080; margin-top: 0; display: flex; align-items: center; font-size: 1.5rem;">
+          <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-left: 5px solid #059669;">
+            <h3 style="color: #059669; margin-top: 0; display: flex; align-items: center; font-size: 1.5rem; gap: 0.5rem;">
               👁️ Visión
             </h3>
-            <p style="line-height: 1.6; font-size: 1rem;">
+            <p style="line-height: 1.6; font-size: 1rem; color: #4a5568; margin: 0;">
               Ser la <strong>plataforma líder de formación empresarial</strong> para el mundo hispanohablante, reconocida por <strong>la calidad, aplicabilidad e innovación</strong> de nuestros cursos, impulsando el crecimiento personal y profesional de miles de usuarios.
             </p>
           </div>
         </div>
 
-        <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); margin-top: 2rem;">
-          <h3 style="color: #004080; margin-top: 0; display: flex; align-items: center; font-size: 1.5rem;">
+        <div style="background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-top: 2rem; border-left: 5px solid #6b7280;">
+          <h3 style="color: #6b7280; margin-top: 0; display: flex; align-items: center; font-size: 1.5rem; gap: 0.5rem;">
             🌟 Nuestros Valores
           </h3>
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
-            <div style="padding: 1rem; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 8px; border-left: 4px solid #004080;">
-              <strong style="color: #004080; font-size: 1rem;">💪 Empoderamiento:</strong> <span style="font-size: 0.95rem;">Creemos en el potencial de cada persona para lograr grandes cosas.</span>
+            <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #004080; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <strong style="color: #004080; font-size: 1rem;">💪 Empoderamiento:</strong> <span style="font-size: 0.95rem; color: #4a5568;">Creemos en el potencial de cada persona para lograr grandes cosas.</span>
             </div>
-            <div style="padding: 1rem; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 8px; border-left: 4px solid #059669;">
-              <strong style="color: #059669; font-size: 1rem;">⭐ Calidad:</strong> <span style="font-size: 0.95rem;">Brindamos contenido útil, actualizado y aplicable.</span>
+            <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #059669; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <strong style="color: #059669; font-size: 1rem;">⭐ Calidad:</strong> <span style="font-size: 0.95rem; color: #4a5568;">Brindamos contenido útil, actualizado y aplicable.</span>
             </div>
-            <div style="padding: 1rem; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 8px; border-left: 4px solid #dc2626;">
-              <strong style="color: #dc2626; font-size: 1rem;">🌍 Accesibilidad:</strong> <span style="font-size: 0.95rem;">Democratizamos el aprendizaje con formatos dinámicos y precios accesibles.</span>
+            <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #dc2626; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <strong style="color: #dc2626; font-size: 1rem;">🌍 Accesibilidad:</strong> <span style="font-size: 0.95rem; color: #4a5568;">Democratizamos el aprendizaje con formatos dinámicos y precios accesibles.</span>
             </div>
-            <div style="padding: 1rem; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 8px; border-left: 4px solid #7c3aed;">
-              <strong style="color: #7c3aed; font-size: 1rem;">🤝 Compromiso:</strong> <span style="font-size: 0.95rem;">Acompañamos al alumno en su proceso con cercanía y responsabilidad.</span>
+            <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #7c3aed; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <strong style="color: #7c3aed; font-size: 1rem;">🤝 Compromiso:</strong> <span style="font-size: 0.95rem; color: #4a5568;">Acompañamos al alumno en su proceso con cercanía y responsabilidad.</span>
             </div>
-            <div style="padding: 1rem; background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%); border-radius: 8px; border-left: 4px solid #f59e0b;">
-              <strong style="color: #f59e0b; font-size: 1rem;">🚀 Innovación:</strong> <span style="font-size: 0.95rem;">Usamos tecnología y estrategias actuales para facilitar el aprendizaje.</span>
+            <div style="padding: 1rem; background: white; border-radius: 8px; border-left: 4px solid #f59e0b; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+              <strong style="color: #f59e0b; font-size: 1rem;">🚀 Innovación:</strong> <span style="font-size: 0.95rem; color: #4a5568;">Usamos tecnología y estrategias actuales para facilitar el aprendizaje.</span>
             </div>
           </div>
+        </div>
+
+        <!-- Perfil de Martha Peña -->
+        <div style="background: linear-gradient(135deg, #e6f3ff 0%, #f0f8ff 100%); padding: 2.5rem; border-radius: 12px; margin-top: 2rem; text-align: center; border-left: 5px solid #0066cc; box-shadow: 0 4px 15px rgba(0,102,204,0.1);">
+          <h3 style="color: #004080; margin-top: 0; font-size: 1.6rem;">Martha Peña - Fundadora y Directora General</h3>
+          <p style="margin-bottom: 1rem;"><strong>MBA por University of Alberta</strong> y <strong>Maestría en Finanzas por ITESM</strong>. Ex-catedrática del <strong>Tecnológico de Monterrey</strong> con experiencia ejecutiva en empresas transnacionales como <strong>Cargill</strong> y <strong>Archer Daniels Midland</strong>.</p>
+          <p style="color: #004080; font-style: italic; font-weight: 600; font-size: 1.1rem; margin: 0;">"Su liderazgo inspira, motiva y transforma."</p>
         </div>
       </div>
     </div>
 
-    <div class="section-spacing">
-      <h2>Nuestros Programas de Capacitación</h2>
-    
-      <div class="category-nav">
-        <button class="category-btn active" data-category="todos">Todos los Programas</button>
-        <button class="category-btn" data-category="administrativo">Liderazgo</button>
-        <button class="category-btn" data-category="operativo">Operacional</button>
-        <button class="category-btn" data-category="transversal">Desarrollo de Equipos</button>
-      </div>
-
-      <div class="courses-grid" id="coursesGrid">
-        <!-- Cursos de Liderazgo -->
-        <div class="course-card" data-category="administrativo">
-          <span class="course-badge administrativo">Liderazgo</span>
-          <h3 class="course-title">Liderazgo y Gestión de Equipos Empresariales</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades de liderazgo y gestión de equipos diseñadas para mejorar el desempeño organizacional y acelerar resultados empresariales.</p>
-          <a href="#contacto" class="cta">Más Información</a>
+    <div class="container"
+      <h3>¿Por qué elegir nuestros programas?</h3>
+      <div class="benefits">
+        <div class="benefit">
+          <strong>✅ Certificación STPS</strong> - Cumple requisitos legales
         </div>
-
-        <div class="course-card" data-category="administrativo">
-          <span class="course-badge administrativo">Liderazgo</span>
-          <h3 class="course-title">Comunicación Efectiva y Resolución de Conflictos</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades relacionadas con comunicación efectiva y resolución de conflictos para mejorar el clima organizacional y la productividad.</p>
-          <a href="#contacto" class="cta">Más Información</a>
+        <div class="benefit">
+          <strong>🎓 Modalidad Flexible</strong> - Presencial y virtual
         </div>
-
-        <div class="course-card" data-category="administrativo">
-          <span class="course-badge administrativo">Liderazgo</span>
-          <h3 class="course-title">Gestión del Tiempo y Productividad</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades relacionadas con gestión del tiempo y productividad para optimizar el rendimiento individual y de equipos.</p>
-          <a href="#contacto" class="cta">Más Información</a>
+        <div class="benefit">
+          <strong>⚖️ Metodología Práctica</strong> - 50% teoría, 50% práctica
         </div>
-
-        <div class="course-card" data-category="administrativo">
-          <span class="course-badge administrativo">Liderazgo</span>
-          <h3 class="course-title">Gestión de la Experiencia del Cliente</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades relacionadas con gestión de la experiencia del cliente para fortalecer relaciones comerciales y fidelización.</p>
-          <a href="#contacto" class="cta">Más Información</a>
+        <div class="benefit">
+          <strong>👨‍🎓 Profesores Expertos</strong> - Maestrías y Doctorados
         </div>
-
-        <div class="course-card" data-category="administrativo">
-          <span class="course-badge administrativo">Liderazgo</span>
-          <h3 class="course-title">Manejo de Quejas y Recuperación del Servicio</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades relacionadas con manejo de quejas y recuperación del servicio para mantener la satisfacción del cliente empresarial.</p>
-          <a href="#contacto" class="cta">Más Información</a>
+        <div class="benefit">
+          <strong>📊 Resultados Medibles</strong> - Impacto real comprobado
         </div>
-
-        <div class="course-card" data-category="administrativo">
-          <span class="course-badge administrativo">Liderazgo</span>
-          <h3 class="course-title">Planificación y Organización de Eventos Corporativos</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades relacionadas con planificación y organización de eventos corporativos para fortalecer la imagen empresarial.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="administrativo">
-          <span class="course-badge administrativo">Liderazgo</span>
-          <h3 class="course-title">Análisis de Indicadores de Desempeño (KPIs)</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades relacionadas con análisis de indicadores de desempeño (KPIs) para la toma de decisiones estratégicas empresariales.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <!-- Cursos Operacionales -->
-        <div class="course-card" data-category="operativo">
-          <span class="course-badge operativo">Operacional</span>
-          <h3 class="course-title">Sostenibilidad y Responsabilidad Social Empresarial</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla conciencia ambiental y aprende prácticas sostenibles aplicables en las operaciones empresariales.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="operativo">
-          <span class="course-badge operativo">Operacional</span>
-          <h3 class="course-title">Atención al Cliente y Excelencia en el Servicio</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades relacionadas con atención al cliente y excelencia en el servicio para fortalecer relaciones comerciales.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="operativo">
-          <span class="course-badge operativo">Operacional</span>
-          <h3 class="course-title">Seguridad en el Trabajo y Prevención de Riesgos</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades relacionadas con seguridad en el trabajo y prevención de riesgos en el entorno empresarial.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="operativo">
-          <span class="course-badge operativo">Operacional</span>
-          <h3 class="course-title">Trabajo en Equipo y Colaboración</h3>
-          <p class="course-duration">⏱️ 10 horas (4 sesiones)</p>
-          <p class="course-description">Desarrolla habilidades relacionadas con trabajo en equipo y colaboración para optimizar el rendimiento organizacional.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <!-- Cursos de Desarrollo de Equipos -->
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Construcción de Equipos Efectivos (Team Building)</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Fortalece la cohesión del equipo y mejora el desempeño organizacional a través de actividades de team building empresarial.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Comunicación Asertiva dentro de los Equipos</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Mejora la comunicación interna y desarrolla habilidades de comunicación asertiva para crear un mejor ambiente laboral y mayor productividad.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Gestión de Conflictos en Entornos Colaborativos</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Aprende técnicas avanzadas para identificar, gestionar y resolver conflictos de manera constructiva en el ambiente empresarial.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Toma de Decisiones en Equipo</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Desarrolla habilidades para la toma de decisiones colaborativa y efectiva en entornos empresariales de alta exigencia.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Coordinación y Confianza entre Áreas</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Fortalece la coordinación y confianza entre diferentes áreas y departamentos de tu organización empresarial.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Trabajo Intergeneracional: Colaborando con Distintas Edades</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Aprende a gestionar equipos multigeneracionales y aprovechar las fortalezas de cada generación en el entorno corporativo.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Gestión del Cambio y Adaptabilidad Grupal</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Desarrolla habilidades para liderar y adaptarse a los cambios organizacionales de manera efectiva y estratégica.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Mentalidad de Crecimiento en Equipos de Trabajo</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Fomenta una mentalidad de crecimiento que impulse la innovación y el desarrollo continuo del equipo empresarial.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Diversidad e Inclusión como Fuerza de Equipo</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Aprende a crear equipos diversos e inclusivos que potencien la creatividad y el rendimiento organizacional empresarial.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Cultura de Accountability: Responsabilidad Compartida</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Desarrolla una cultura de responsabilidad compartida donde cada miembro del equipo se compromete con los resultados empresariales.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Liderazgo Situacional</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Aprende a adaptar tu estilo de liderazgo según las situaciones y necesidades específicas de tu equipo empresarial.</p>
-          <a href="#contacto" class="cta">Más Información</a>
-        </div>
-
-        <div class="course-card" data-category="transversal">
-          <span class="course-badge transversal">Desarrollo de Equipos</span>
-          <h3 class="course-title">Liderazgo Consciente y Empático</h3>
-          <p class="course-duration">⏱️ 8 a 12 horas</p>
-          <p class="course-description">Desarrolla un estilo de liderazgo basado en la consciencia emocional y la empatía para inspirar y motivar a tu equipo.</p>
-          <a href="#contacto" class="cta">Más Información</a>
+        <div class="benefit">
+          <strong>📋 Documentación Completa</strong> - Formatos DC-2, DC-3, DC-5
         </div>
       </div>
-    </div>
-
-    <div class="section-spacing">
-      <h2>¿Por qué elegir nuestros programas?</h2>
-      <ul style="font-size: 1rem; line-height: 1.8;">
-        <li><strong>Certificación oficial STPS</strong> - Cumple con todos los requisitos legales</li>
-        <li><strong>Metodología práctica</strong> - 50% teoría, 50% ejercicios reales</li>
-        <li><strong>Profesores expertos</strong> - Maestrías y Doctorados</li>
-        <li><strong>Flexibilidad total</strong> - Presencial o a distancia</li>
-        <li><strong>Resultados medibles</strong> - Impacto real en tu organización</li>
-        <li><strong>Documentación completa</strong> - Formatos DC-2, DC-3, DC-5</li>
-      </ul>
-    </div>
-
-    <div class="section-spacing">
-      <div class="section-alt">
-        <h2 style="text-align: center; color: #004080; margin-bottom: 2.5rem; font-size: 2.2rem; border: none; padding-bottom: 0;">Lo que dicen nuestros participantes</h2>
-      
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;">
-          <!-- Testimonio 1 -->
-          <div style="background: white; border-left: 5px solid #004080; padding: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 12px; transition: transform 0.2s ease;">
-            <p style="font-style: italic; margin-bottom: 1rem; line-height: 1.6;">"El curso de Liderazgo transformó completamente mi forma de gestionar equipos. Ahora tengo herramientas concretas que aplico día a día y los resultados son evidentes."</p>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #004080, #0066cc); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">AM</div>
-              <div>
-                <p style="margin: 0; font-weight: bold; color: #1a202c;">Ana María González</p>
-                <small style="color: #718096;">Gerente de Operaciones, Manufacturas del Centro</small>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonio 2 -->
-          <div style="background: white; border-left: 5px solid #059669; padding: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 12px; transition: transform 0.2s ease;">
-            <p style="font-style: italic; margin-bottom: 1rem; line-height: 1.6;">"Excelente metodología práctica. El curso de Comunicación Efectiva me ayudó a resolver conflictos que tenían meses sin solución. Martha es una instructora excepcional."</p>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #059669, #10b981); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">CR</div>
-              <div>
-                <p style="margin: 0; font-weight: bold; color: #1a202c;">Carlos Ramírez</p>
-                <small style="color: #718096;">Director de RH, Grupo Comercial Bajío</small>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonio 3 -->
-          <div style="background: white; border-left: 5px solid #dc2626; padding: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 12px; transition: transform 0.2s ease;">
-            <p style="font-style: italic; margin-bottom: 1rem; line-height: 1.6;">"El Team Building que realizamos cambió la dinámica de nuestro departamento. Ahora trabajamos como un verdadero equipo y la productividad aumentó notablemente."</p>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #dc2626, #ef4444); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">MF</div>
-              <div>
-                <p style="margin: 0; font-weight: bold; color: #1a202c;">María Fernanda López</p>
-                <small style="color: #718096;">Coordinadora de Ventas, Tecnológica Querétaro</small>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonio 4 -->
-          <div style="background: white; border-left: 5px solid #7c3aed; padding: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 12px; transition: transform 0.2s ease;">
-            <p style="font-style: italic; margin-bottom: 1rem; line-height: 1.6;">"Capacitamos a todo nuestro equipo directivo en Gestión del Tiempo. Los resultados fueron inmediatos: mejor organización y menos estrés. Muy recomendable."</p>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #7c3aed, #8b5cf6); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">JS</div>
-              <div>
-                <p style="margin: 0; font-weight: bold; color: #1a202c;">Javier Sánchez</p>
-                <small style="color: #718096;">Gerente General, Servicios Industriales del Norte</small>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonio 5 -->
-          <div style="background: white; border-left: 5px solid #f59e0b; padding: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 12px; transition: transform 0.2s ease;">
-            <p style="font-style: italic; margin-bottom: 1rem; line-height: 1.6;">"La certificación STPS fue clave para nosotros. Todo el proceso fue muy profesional y recibimos toda la documentación requerida sin complicaciones."</p>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #f59e0b, #fbbf24); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">LP</div>
-              <div>
-                <p style="margin: 0; font-weight: bold; color: #1a202c;">Lucía Pérez</p>
-                <small style="color: #718096;">Jefa de Capacitación, Empresa Automotriz QRO</small>
-              </div>
-            </div>
-          </div>
-
-          <!-- Testimonio 6 -->
-          <div style="background: white; border-left: 5px solid #06b6d4; padding: 1.8rem; box-shadow: 0 4px 15px rgba(0,0,0,0.08); border-radius: 12px; transition: transform 0.2s ease;">
-            <p style="font-style: italic; margin-bottom: 1rem; line-height: 1.6;">"Contratamos varios cursos para diferentes áreas. La flexibilidad de modalidades (presencial y virtual) nos permitió capacitar a todo el personal sin afectar operaciones."</p>
-            <div style="display: flex; align-items: center; gap: 1rem;">
-              <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #06b6d4, #0891b2); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">RM</div>
-              <div>
-                <p style="margin: 0; font-weight: bold; color: #1a202c;">Roberto Morales</p>
-                <small style="color: #718096;">Director Administrativo, Logística Integral MX</small>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <p style="text-align: center; color: #718096; font-size: 0.9rem; font-style: italic; margin-top: 2rem;">
-          * Testimonios representativos del tipo de resultados que nuestros participantes experimentan. Los nombres han sido modificados para proteger la privacidad.
-        </p>
-      </div>
-    </div>
-
-    <div class="contact-section" id="contacto">
-      <h2 style="text-align: center; margin-top: 0;">Contáctanos</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3 style="color: #004080; margin-top: 0;">¿Listo para desarrollar a tu equipo?</h3>
-          <p>Nuestro equipo está listo para ayudarte a encontrar el programa perfecto para el desarrollo profesional de tu organización.</p>
-          
-          <div class="contact-item">
-            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-            </svg>
-            <span>554346 4738</span>
-          </div>
-
-          <div class="contact-item">
-            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-              <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-            </svg>
-            <span>formacionycapacitaciondemexico@gmail.com</span>
-          </div>
-          
-          <div class="contact-item">
-            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Querétaro, México</span>
-          </div>
-
-          <div class="contact-item">
-            <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Lun - Vie: 9:00 AM - 6:00 PM</span>
-          </div>
-        </div>
-        
-        <form class="contact-form" id="contactForm">
-          <div class="form-group">
-            <label for="name">Nombre Completo *</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Correo Electrónico *</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="company">Empresa/Organización</label>
-            <input type="text" id="company" name="company" placeholder="Nombre de tu empresa">
-          </div>
-
-          <div class="form-group">
-            <label for="position">Área de Interés</label>
-            <select id="position" name="position">
-              <option value="">Selecciona el área</option>
-              <option value="liderazgo">Liderazgo</option>
-              <option value="operacional">Operacional</option>
-              <option value="equipos">Desarrollo de Equipos</option>
-              <option value="todos">Todos los programas</option>
-              <option value="personalizado">Programa personalizado</option>
-            </select>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Mensaje *</label>
-            <textarea id="message" name="message" required placeholder="¿Cómo podemos ayudarte? ¿Qué programas te interesan?"></textarea>
-          </div>
-          
-          <button type="submit" class="submit-btn">Enviar Mensaje</button>
-        </form>
-      </div>
-    </div>
-
-    <div style="text-align: center; margin-top: 2rem;">
-      <a href="https://wa.me/525543464738?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20cursos%20de%20capacitación%20empresarial" class="cta secondary" target="_blank">📱 Contactar por WhatsApp</a>
-      <a href="#contacto" class="cta">💼 Solicitar Cotización</a>
     </div>
   </div>
 
@@ -899,68 +429,9 @@
     <p>&copy; 2025 Formación y Capacitación de México. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Botón flotante de WhatsApp -->
-  <a href="https://wa.me/525543464738?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20cursos%20de%20capacitación%20empresarial" class="whatsapp-float" target="_blank">
-    📱
-  </a>
-
   <script>
-    // Filtrado de cursos por categoría
-    const categoryButtons = document.querySelectorAll('.category-btn');
-    const courseCards = document.querySelectorAll('.course-card');
-
-    categoryButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        categoryButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-
-        const selectedCategory = this.getAttribute('data-category');
-
-        courseCards.forEach(card => {
-          if (selectedCategory === 'todos' || card.getAttribute('data-category') === selectedCategory) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
-      });
-    });
-
-    // Navegación suave
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Manejo del formulario de contacto
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('¡Gracias por tu mensaje! Te contactaremos pronto.');
-      this.reset();
-    });
-
-    // Prellenar mensaje cuando se hace clic en "Más Información"
-    document.querySelectorAll('.course-card .cta').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        const courseTitle = this.parentElement.querySelector('.course-title').textContent;
-        
-        setTimeout(() => {
-          const messageField = document.getElementById('message');
-          if (messageField && this.getAttribute('href') === '#contacto') {
-            messageField.value = `Hola, me interesa obtener más información sobre el curso: ${courseTitle}`;
-            messageField.focus();
-          }
-        }, 500);
-      });
-    });
+    // Los enlaces ahora van directo a las páginas HTML
+    // Ya no se necesitan las funciones de JavaScript
   </script>
 </body>
 </html>
