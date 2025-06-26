@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - FOCUS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Menú de navegación fijo */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #004080;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 2rem;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #4a5568;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #004080;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: left 0.3s ease;
+        padding-top: 2rem;
+        gap: 1rem;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-link {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+        width: 200px;
+        text-align: center;
+      }
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      color: #2d3748;
+      min-height: 100vh;
+    }
+    
+    header {
+      background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.1"><polygon points="1000,100 1000,0 0,100"/></svg>') no-repeat bottom;
+      background-size: cover;
+    }
+    
+    header h1 {
+      position: relative;
+      margin: 0;
+      font-size: 3rem;
+      font-weight: 800;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    
+    header p {
+      position: relative;
+      margin: 1rem 0 0 0;
+      font-size: 1.2rem;
+      color: white;
+      opacity: 0.95;
+      font-weight: 400;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem;
+    }
+
+    .contact-intro {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .contact-intro h2 {
+      color: #004080;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      letter-spacing: -0.025em;
+    }
+
+    .contact-intro p {
+      font-size: 1.1rem;
+      color: #4a5568;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .contact-main {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin: 3rem 0;
+    }
+
+    .contact-info {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+      border-left: 6px solid #004080;
+    }
+
+    .contact-info h3 {
+      color: #004080;
+      margin-top: 0;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 64, 128, 0.1);
+      border-left-color: #004080;
+    }
+
+    .contact-item.phone {
+      border-left-color: #059669;
+    }
+
+    .contact-item.email {
+      border-left-color: #dc2626;
+    }
+
+    .contact-item.location {
+      border-left-color: #7c3aed;
+    }
+
+    .contact-item.hours {
+      border-left-color: #f59e0b;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      margin-right: 1.5rem;
+      background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .contact-item.phone .contact-icon {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    }
+
+    .contact-item.email .contact-icon {
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    }
+
+    .contact-item.location .contact-icon {
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    }
+
+    .contact-item.hours .contact-icon {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    }
+
+    .contact-details h4 {
+      margin: 0 0 0.5rem 0;
+      color: #1a202c;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .contact-details p {
+      margin: 0;
+      color: #4a5568;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .contact-details a {
+      color: #004080;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .contact-details a:hover {
+      color: #0066cc;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+      border-left: 6px solid #059669;
+    }
+
+    .contact-form h3 {
+      color: #059669;
+      margin-top: 0;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    .form-group label {
+      display: block;
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+      color: #2d3748;
+      font-size: 1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+      background: white;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #059669;
+      box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
+      background: #f0fdf4;
+    }
+
+    .form-group textarea {
+      height: 120px;
+      resize: vertical;
+    }
+    
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      color: white;
+      border: none;
+      padding: 1.2rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Inter', sans-serif;
+      box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(5, 150, 105, 0.4);
+    }
+
+    .quick-contact {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+      margin: 3rem 0;
+      text-align: center;
+      border-left: 6px solid #6b7280;
+    }
+
+    .quick-contact h3 {
+      color: #6b7280;
+      margin-top: 0;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .quick-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .quick-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1.2rem 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .quick-btn.whatsapp {
+      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+      color: white;
+    }
+
+    .quick-btn.email {
+      background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
+      color: white;
+    }
+
+    .quick-btn.phone {
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      color: white;
+    }
+
+    .quick-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      text-decoration: none;
+      color: white;
+    }
+
+    .map-section {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+      margin: 3rem 0;
+      text-align: center;
+      border-left: 6px solid #7c3aed;
+    }
+
+    .map-section h3 {
+      color: #7c3aed;
+      margin-top: 0;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .map-placeholder {
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      height: 300px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4a5568;
+      font-size: 1.1rem;
+      margin: 1.5rem 0;
+      border: 2px dashed #cbd5e0;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      color: white;
+      text-align: center;
+      padding: 2.5rem;
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .contact-main {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      
+      header h1 {
+        font-size: 2.2rem;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .contact-item {
+        padding: 1rem;
+      }
+
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+      }
+
+      .quick-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .quick-btn {
+        width: 250px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Menú de navegación fijo -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">FOCUS</a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="cursos_liderazgo.html" class="nav-link">Liderazgo</a>
+        </li>
+        <li class="nav-item">
+          <a href="cursos_operacionales.html" class="nav-link">Operaciones</a>
+        </li>
+        <li class="nav-item">
+          <a href="cursos_desarrollo.html" class="nav-link">Desarrollo de Equipos</a>
+        </li>
+        <li class="nav-item">
+          <a href="contacto.html" class="nav-link active">Contacto</a>
+        </li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+  </nav>
+
+  <header>
+    <h1>📞 Contacto</h1>
+    <p>Estamos aquí para ayudarte a impulsar el crecimiento de tu equipo</p>
+  </header>
+
+  <div class="container">
+    <div class="contact-intro">
+      <h2>¡Hablemos de tu proyecto!</h2>
+      <p>¿Tienes preguntas sobre nuestros cursos? ¿Necesitas una cotización personalizada? ¿Quieres programar una consulta gratuita? Estamos aquí para ayudarte a encontrar la solución perfecta para tu organización.</p>
+    </div>
+
+    <div class="contact-main">
+      <div class="contact-info">
+        <h3>Información de Contacto</h3>
+        
+        <div class="contact-item phone">
+          <div class="contact-icon">📞</div>
+          <div class="contact-details">
+            <h4>Teléfono</h4>
+            <p><a href="tel:525543464738">554 346 4738</a></p>
+            <p>Lun - Vie: 9:00 AM - 6:00 PM</p>
+          </div>
+        </div>
+
+        <div class="contact-item email">
+          <div class="contact-icon">📧</div>
+          <div class="contact-details">
+            <h4>Correo Electrónico</h4>
+            <p><a href="mailto:formacionycapacitaciondemexico@gmail.com">formacionycapacitaciondemexico@gmail.com</a></p>
+            <p>Respuesta en menos de 24 horas</p>
+          </div>
+        </div>
+
+        <div class="contact-item location">
+          <div class="contact-icon">📍</div>
+          <div class="contact-details">
+            <h4>Ubicación</h4>
+            <p><strong>Querétaro, México</strong></p>
+            <p>Atendemos presencialmente en la zona metropolitana de Querétaro y virtualmente en todo México</p>
+          </div>
+        </div>
+
+        <div class="contact-item hours">
+          <div class="contact-icon">🕒</div>
+          <div class="contact-details">
+            <h4>Horarios de Atención</h4>
+            <p><strong>Lunes a Viernes:</strong> 9:00 AM - 6:00 PM</p>
+            <p><strong>Sábados:</strong> 9:00 AM - 2:00 PM</p>
+            <p><strong>Domingos:</strong> Cerrado</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h3>Envíanos un Mensaje</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="nombre">Nombre Completo *</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Correo Electrónico *</label>
+            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="554 123 4567">
+          </div>
+
+          <div class="form-group">
+            <label for="empresa">Empresa/Organización</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa">
+          </div>
+
+          <div class="form-group">
+            <label for="interes">Área de Interés</label>
+            <select id="interes" name="interes">
+              <option value="">Selecciona el área de tu interés</option>
+              <option value="liderazgo">Cursos de Liderazgo</option>
+              <option value="operacional">Cursos Operacionales</option>
+              <option value="equipos">Desarrollo de Equipos</option>
+              <option value="todos">Todos los programas</option>
+              <option value="personalizado">Programa personalizado</option>
+              <option value="cotizacion">Solicitar cotización</option>
+              <option value="consulta">Consulta gratuita</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="mensaje">Mensaje *</label>
+            <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos sobre tu proyecto, necesidades de capacitación o cualquier pregunta que tengas..."></textarea>
+          </div>
+          
+          <button type="submit" class="submit-btn">Enviar Mensaje</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="quick-contact">
+      <h3>Contacto Rápido</h3>
+      <p>¿Prefieres un contacto más directo? Elige la opción que más te convenga:</p>
+      
+      <div class="quick-buttons">
+        <a href="https://wa.me/525543464738?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20cursos%20de%20capacitación%20empresarial" class="quick-btn whatsapp" target="_blank">
+          📱 WhatsApp
+        </a>
+        
+        <a href="mailto:formacionycapacitaciondemexico@gmail.com?subject=Consulta sobre Cursos de Capacitación" class="quick-btn email">
+          📧 Enviar Email
+        </a>
+        
+        <a href="tel:525543464738" class="quick-btn phone">
+          📞 Llamar Ahora
+        </a>
+      </div>
+    </div>
+
+    <div class="map-section">
+      <h3>Nuestra Ubicación</h3>
+      <p>Nos encontramos en <strong>Querétaro, México</strong>. Ofrecemos servicios presenciales en la zona metropolitana y capacitación virtual en todo el país.</p>
+      <div class="map-placeholder">
+        🗺️ Mapa de Querétaro, México<br>
+        <small>(Aquí se puede integrar Google Maps si se desea)</small>
+      </div>
+      <p style="color: #718096; font-size: 0.9rem; margin-top: 1rem;">
+        * Para capacitaciones presenciales fuera de Querétaro, consulta costos adicionales de traslado
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    <h3>FOCUS</h3>
+    <p>Formación y Capacitación en Unidades de Servicios y Producción</p>
+    <p>Desarrollamos líderes y equipos excepcionales que impulsan el éxito organizacional</p>
+    <p>&copy; 2025 FOCUS. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Menú móvil
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileMenuBtn.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Manejo del formulario de contacto
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Obtener datos del formulario
+      const formData = new FormData(this);
+      const nombre = formData.get('nombre');
+      const email = formData.get('email');
+      const empresa = formData.get('empresa');
+      const interes = formData.get('interes');
+      
+      // Simular envío exitoso
+      alert(`¡Gracias ${nombre}! Tu mensaje ha sido enviado correctamente. Te contactaremos pronto.`);
+      
+      // Limpiar formulario
+      this.reset();
+    });
+
+    // Navegación suave
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
