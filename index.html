@@ -3,9 +3,105 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formación y Capacitación de México - Nuestros Cursos</title>
+  <title>FOCUS - Formación y Capacitación en Unidades de Servicios y Producción</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    /* Menú de navegación fijo */
+    .navbar {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #004080;
+      text-decoration: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 2rem;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      text-decoration: none;
+      color: #4a5568;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: linear-gradient(135deg, #004080 0%, #0066cc 100%);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: #004080;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: white;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: left 0.3s ease;
+        padding-top: 2rem;
+        gap: 1rem;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .nav-link {
+        font-size: 1.1rem;
+        padding: 1rem 2rem;
+        width: 200px;
+        text-align: center;
+      }
+    }
+    
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       margin: 0;
@@ -298,6 +394,31 @@
   </style>
 </head>
 <body>
+  <!-- Menú de navegación fijo -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo">FOCUS</a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link active">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a href="cursos_liderazgo.html" class="nav-link">Liderazgo</a>
+        </li>
+        <li class="nav-item">
+          <a href="cursos_operacionales.html" class="nav-link">Operaciones</a>
+        </li>
+        <li class="nav-item">
+          <a href="cursos_desarrollo.html" class="nav-link">Desarrollo de Equipos</a>
+        </li>
+        <li class="nav-item">
+          <a href="contacto.html" class="nav-link">Contacto</a>
+        </li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+  </nav>
+
   <header>
     <h1>Nuestros Programas de Capacitación</h1>
     <p>Elige la categoría que mejor se adapte a tus necesidades de desarrollo profesional</p>
@@ -421,15 +542,54 @@
         </div>
       </div>
     </div>
+
+    <!-- Sección de Contacto -->
+    <div class="container" id="contacto" style="margin-top: 4rem;">
+      <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 6px 25px rgba(0,0,0,0.08); text-align: center; border-left: 6px solid #004080;">
+        <h2 style="color: #004080; margin-top: 0; font-size: 2rem; border: none; padding-bottom: 0;">¿Listo para comenzar?</h2>
+        <p style="font-size: 1.1rem; color: #4a5568; margin-bottom: 2rem;">Contáctanos para obtener más información sobre nuestros cursos o para programar una consulta gratuita.</p>
+        
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <a href="https://wa.me/525543464738?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20cursos%20de%20capacitación%20empresarial" style="display: inline-block; margin: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: white; border: none; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);" target="_blank">📱 WhatsApp</a>
+          
+          <a href="mailto:formacionycapacitaciondemexico@gmail.com" style="display: inline-block; margin: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #004080 0%, #0066cc 100%); color: white; border: none; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 64, 128, 0.3);">📧 Email</a>
+          
+          <a href="tel:525543464738" style="display: inline-block; margin: 0.5rem; padding: 1rem 2rem; background: linear-gradient(135deg, #059669 0%, #047857 100%); color: white; border: none; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(5, 150, 105, 0.3);">📞 Llamar</a>
+        </div>
+
+        <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e2e8f0;">
+          <p style="color: #718096; margin: 0.5rem 0; font-size: 0.95rem;"><strong>📞 Teléfono:</strong> 554346 4738</p>
+          <p style="color: #718096; margin: 0.5rem 0; font-size: 0.95rem;"><strong>📧 Email:</strong> formacionycapacitaciondemexico@gmail.com</p>
+          <p style="color: #718096; margin: 0.5rem 0; font-size: 0.95rem;"><strong>📍 Ubicación:</strong> Querétaro, México</p>
+          <p style="color: #718096; margin: 0.5rem 0; font-size: 0.95rem;"><strong>🕒 Horarios:</strong> Lun - Vie: 9:00 AM - 6:00 PM</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <footer>
-    <h3>Formación y Capacitación de México</h3>
+    <h3>FOCUS</h3>
+    <p>Formación y Capacitación en Unidades de Servicios y Producción</p>
     <p>Desarrollamos líderes y equipos excepcionales que impulsan el éxito organizacional</p>
-    <p>&copy; 2025 Formación y Capacitación de México. Todos los derechos reservados.</p>
+    <p>&copy; 2025 FOCUS. Todos los derechos reservados.</p>
   </footer>
 
   <script>
+    // Menú móvil
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    mobileMenuBtn.addEventListener('click', function() {
+      navMenu.classList.toggle('active');
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        navMenu.classList.remove('active');
+      });
+    });
+
     // Los enlaces ahora van directo a las páginas HTML
     // Ya no se necesitan las funciones de JavaScript
   </script>
